@@ -1,292 +1,621 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    font-style: italic;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
-    background:#fff;
-    color:#333;
+    background: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
 }
+
+
+/* =========================
+   CABEÇALHO
+========================= */
 
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 10%;
-    background:white;
-    position:sticky;
-    top:0;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
+    width: 100%;
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:30px;
-    font-weight:bold;
-    color:#B8942E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 8%;
+
+    background: white;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
 .logo img{
-    width:50px;
-    height:50px;
-    object-fit:contain;
-    border-radius:50%;
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+/* MENU */
+
+nav{
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 nav a{
-    text-decoration:none;
-    color:#444;
-    margin-left:25px;
-    font-weight:600;
+    text-decoration: none;
+
+    color: #444;
+
+    font-weight: 600;
+
+    transition: .3s;
 }
 
 nav a:hover{
-    color:#B8942E;
+    color: #B8942E;
 }
 
-.h{
-    height:85vh;
+
+/* =========================
+   INÍCIO
+========================= */
+
+.hero{
+    min-height: 85vh;
+
     background:
-        linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)),
-        url("https://imgs.search.brave.com/vqGR87LOJ05xxOAQMh4j4CrzmV7KsDYOzMz3VhN-utE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L2ZvdG9zLXByZW1p/dW0vbmFzY2VyLWRv/LXNvbC1zZXJlbm8t/c29icmUtdW0tcGFz/dG8tY2VyY2Fkby1l/bS1sdXotZG91cmFk/YV85MDgzNDQtMjI3/NjI1LmpwZz9zZW10/PWFpc190ZXN0X2Im/dz03NDAmcT04MA") center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    padding-left:10%;
-}
+        linear-gradient(
+            rgba(255,255,255,.35),
+            rgba(255,255,255,.35)
+        ),
+        url("https://imgs.search.brave.com/vqGR87LOJ05xxOAQMh4j4CrzmV7KsDYOzMz3VhN-utE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L2ZvdG9zLXByZW1p/dW0vbmFzY2VyLWRv/LXNvbC1zZXJlbm8t/c29icmUtdW0tcGFz/dG8tY2VyY2Fkby1l/bS1sdXotZG91cmFk/YV85MDgzNDQtMjI3/NjI1LmpwZz9zZW10/PWFpc190ZXN0X2Im/dz03NDAmcT04MA")
+        center / cover no-repeat;
 
-.h-text{
-    background:rgba(255,255,255,.85);
-    padding:40px;
-    border-radius:15px;
-    max-width:500px;
-}
-
-.h h1{
-    font-size:55px;
-    margin-bottom:20px;
-}
-
-.h p{
-    font-size:18px;
-    margin-bottom:30px;
-    line-height:1.6;
-}
-
-button{
-    padding:15px 35px;
-    border:none;
-    background:#d95f8d;
-    color:white;
-    border-radius:30px;
-    cursor:pointer;
-    font-size:17px;
-    transition:.3s;
-}
-
-button:hover{
-    background:#bf3e72;
-}
-
-.produtos{
-    padding:80px 10%;
-}
-
-.produtos h2{
-    text-align:center;
-    margin-bottom:50px;
-    font-size:40px;
-}
-
-footer{
-    padding:40px;
-    text-align:center;
-    background:#f8f8f8;
-    margin-top:60px;
-}
-.pesquisa{
-    width: 500px;
-    max-width: 90%;
-    margin: 40px auto;
     display: flex;
-    background: #fff;
-    border: 2px solid #d9d9d9;
+    align-items: center;
+
+    padding: 50px 8%;
+}
+
+.hero-text{
+    max-width: 550px;
+
+    padding: 40px;
+
+    background: rgba(255,255,255,.88);
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,.08);
+}
+
+.hero h1{
+    font-size: clamp(35px, 5vw, 55px);
+
+    margin-bottom: 20px;
+
+    line-height: 1.1;
+}
+
+.hero p{
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+.pesquisa{
+    width: 100%;
+
+    display: flex;
+
+    margin-top: 30px;
+
+    background: white;
+
+    border: 2px solid #dddddd;
+
     border-radius: 40px;
+
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 
 .pesquisa input{
     flex: 1;
+
+    min-width: 0;
+
     border: none;
     outline: none;
-    padding: 15px 20px;
-    font-size: 16px;
-}
 
-.pesquisa input::placeholder{
-    color: #999;
+    padding: 15px 20px;
+
+    font-size: 16px;
 }
 
 .pesquisa button{
     width: 60px;
+
     border: none;
+
     background: #E0C36A;
+
     color: white;
+
     font-size: 20px;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    transition: .3s;
 }
 
 .pesquisa button:hover{
     background: #D4AF37;
 }
 
+
+/* =========================
+   PRODUTOS
+========================= */
+
+.produtos{
+    padding: 70px 8%;
+}
+
+.produtos h2{
+    text-align: center;
+
+    font-size: clamp(30px, 4vw, 40px);
+
+    margin-bottom: 40px;
+}
+
 .produtos-container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+
+    justify-content: center;
 }
 
 .produto{
-    width:350px;
-}
+    width: 100%;
+    max-width: 450px;
 
-.produto{
-    background:#fafafa;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-    transition:.3s;
+    background: #fafafa;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
 }
 
 .produto img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
-    display:block;
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    display: block;
 }
 
 .produto-info{
-    padding:25px;
+    padding: 25px;
 }
 
 .produto-info h3{
-    font-size:22px;
-    color:#333;
-    margin-bottom:12px;
+    font-size: 24px;
+
+    margin-bottom: 15px;
 }
 
 .produto-info p{
-    color:#666;
-    line-height:1.5;
-    margin-bottom:20px;
+    color: #666;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
 }
 
-.empresa{
-    padding:80px 10%;
+.produto-info ul{
+    padding-left: 20px;
+
+    color: #666;
 }
 
-.empresa h2{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:50px;
+.produto-info li{
+    margin-bottom: 10px;
+
+    line-height: 1.5;
 }
 
-.empresa-container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    max-width:1100px;
-    margin:auto;
-}
 
-.empresa-card{
-    background:#fafafa;
-    padding:30px;
-    border-radius:15px;
-    flex:1;
-    text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.empresa-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.empresa-card h3{
-    font-size:25px;
-    color:#333;
-    margin-bottom:15px;
-}
-
-.empresa-card p{
-    color:#666;
-    line-height:1.6;
-}
+/* =========================
+   SOBRE
+========================= */
 
 .sobre{
-    padding:80px 10%;
-    background:#fff;
+    padding: 70px 8%;
 }
 
 .sobre-container{
-    max-width:900px;
-    margin:auto;
-    padding:45px;
-    background:#fafafa;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    background: #fafafa;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
 }
 
 .sobre-container h2{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:30px;
-    color:#333;
+    text-align: center;
+
+    font-size: clamp(30px, 4vw, 40px);
+
+    margin-bottom: 30px;
 }
 
 .sobre-container h3{
-    font-size:25px;
-    margin-top:30px;
-    margin-bottom:12px;
-    color:#333;
+    font-size: 25px;
+
+    margin-top: 30px;
+
+    margin-bottom: 12px;
 }
 
 .sobre-container p{
-    color:#666;
-    font-size:17px;
-    line-height:1.7;
+    color: #666;
+
+    font-size: 17px;
+
+    line-height: 1.7;
 }
+
+
+/* =========================
+   EMPRESA
+========================= */
+
+.empresa{
+    padding: 70px 8%;
+
+    background: #fafafa;
+}
+
+.empresa h2{
+    text-align: center;
+
+    font-size: clamp(30px, 4vw, 40px);
+
+    margin-bottom: 40px;
+}
+
+.empresa-container{
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.empresa-card{
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+
+    transition: .3s;
+}
+
+.empresa-card:hover{
+    transform: translateY(-5px);
+}
+
+.empresa-card h3{
+    font-size: 24px;
+
+    margin-bottom: 15px;
+
+    color: #B8942E;
+}
+
+.empresa-card p{
+    color: #666;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   VÍDEO
+========================= */
+
 .video{
-    padding:160px 20%;
-    background:#fafafa;
-    text-align:center;
+    padding: 70px 8%;
+
+    text-align: center;
 }
 
 .video h2{
-    font-size:40px;
-    margin-bottom:40px;
-    color:#333;
+    font-size: clamp(30px, 4vw, 40px);
+
+    margin-bottom: 35px;
 }
 
 .video-container{
-    max-width:900px;
-    margin:auto;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.12);
-    background:#000;
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: black;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
 }
 
 .video-container video{
-    height: 20%;
-    width:100%;
-    display:block;
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer{
+    padding: 30px 15px;
+
+    text-align: center;
+
+    background: #f0f0f0;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px){
+
+    .empresa-container{
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .empresa-card:last-child{
+        grid-column: span 2;
+
+        max-width: 500px;
+
+        margin: auto;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px){
+
+    /* CABEÇALHO */
+
+    header{
+        padding: 12px 5%;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .logo img{
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* MENU */
+
+    nav{
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        flex-wrap: wrap;
+    }
+
+    nav a{
+        font-size: 13px;
+
+        padding: 7px 5px;
+    }
+
+
+    /* INÍCIO */
+
+    .hero{
+        min-height: 75vh;
+
+        padding: 40px 5%;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .hero-text{
+        width: 100%;
+
+        padding: 25px 20px;
+    }
+
+    .hero h1{
+        font-size: 34px;
+    }
+
+    .hero p{
+        font-size: 16px;
+    }
+
+
+    /* PESQUISA */
+
+    .pesquisa{
+        margin-top: 25px;
+    }
+
+    .pesquisa input{
+        padding: 13px 15px;
+
+        font-size: 14px;
+    }
+
+    .pesquisa button{
+        width: 55px;
+    }
+
+
+    /* PRODUTOS */
+
+    .produtos{
+        padding: 50px 5%;
+    }
+
+    .produto img{
+        height: 260px;
+    }
+
+    .produto-info{
+        padding: 20px;
+    }
+
+
+    /* SOBRE */
+
+    .sobre{
+        padding: 50px 5%;
+    }
+
+    .sobre-container{
+        padding: 25px 20px;
+    }
+
+    .sobre-container p{
+        font-size: 16px;
+    }
+
+
+    /* EMPRESA */
+
+    .empresa{
+        padding: 50px 5%;
+    }
+
+    .empresa-container{
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .empresa-card:last-child{
+        grid-column: auto;
+
+        max-width: none;
+    }
+
+    .empresa-card{
+        padding: 25px 20px;
+    }
+
+
+    /* VÍDEO */
+
+    .video{
+        padding: 50px 5%;
+    }
+
+    .video-container{
+        border-radius: 12px;
+    }
+
+}
+
+
+/* =========================
+   CELULARES PEQUENOS
+========================= */
+
+@media (max-width: 380px){
+
+    nav a{
+        font-size: 12px;
+    }
+
+    .hero h1{
+        font-size: 30px;
+    }
+
+    .hero-text{
+        padding: 20px 15px;
+    }
+
+    .produto-info{
+        padding: 18px 15px;
+    }
+
 }
